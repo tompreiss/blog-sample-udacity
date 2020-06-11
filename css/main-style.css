@@ -1,0 +1,170 @@
+body, html {   
+    color: #000000;
+    font-size: 18px;
+    height: 100%;
+}
+.container {
+    display: grid;
+    height: 100%;
+    grid-template-columns: 40px repeat (7, 1fr);
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: 
+    "hd hd hd hd hd hd hd hd"
+    "main main main main main main main main"
+    "ft ft ft ft ft ft ft ft";
+}
+.container > div {
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-bottom: 30px;
+}
+
+.header {
+    grid-area: hd;
+    background-image: url(../media/creativity.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    border-radius: 10px;
+    color: #fff06c;
+}
+.container > div:first-child {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: flex-end;
+    text-decoration: underline;
+    font-size: 1.7em;  
+}
+.footer{
+    grid-area: ft;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f1f1f1;
+    height: 100px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 15px 15px 0 0;
+    font-size: 0.8em;
+}
+.content {
+    grid-area: main;
+    display: flex;
+    flex-wrap: wrap;
+}
+.content > div {
+    padding: 10px;
+    justify-content: center;
+    margin: 15px;
+    flex: 1 1 300px;
+    height: 250px;
+}
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    text-align: left;
+    background-color: #f1f1f1;
+    width: 50%;
+    align-items: left;
+    justify-content: left;
+    border-radius: 10px;
+    transition: 0.5s;
+    cursor: pointer; 
+}
+.button {
+    background-color: transparent;
+    border: none;
+    color: black;
+    padding: 5px;
+    padding-left: 40px;
+    padding-right: 40px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 0.8em;
+    cursor: pointer;
+    border: 2px solid black;
+    border-radius: 5px;
+    transition: 0.5s;  
+}
+.button:hover {
+    background-color: black;
+    color: white;
+    border: 2px solid black;
+}
+.card:hover {
+    background-color: #fff06c;
+}
+.read-more {
+    font-size: 0.7em;
+    color: #4d4dff;
+}
+
+/* Breakpoints */
+/* Anything smaller than first breakpoint 600px */
+@media (max-width: 600px) {
+    .container {
+        display: grid;
+        grid-template-columns: 850px;
+        grid-template-rows: auto auto 1fr;
+        grid-template-areas: 
+        "hd"
+        "main"
+        "ft";
+    }
+    .container > div {
+        margin: 10px;
+    }
+    .header {
+        height: 75vh;
+    }
+}
+  /* Medium Screens */
+  @media (min-width: 600px) and (max-width:1030px) {
+    .container {
+            display: grid;
+            height: 100%;
+            grid-template-columns: 40px repeat (7, 1fr);
+            grid-template-rows: auto auto 1fr;
+            grid-template-areas: 
+            "hd hd hd hd hd hd hd hd"
+            "main main main main main main main main"
+            "ft ft ft ft ft ft ft ft";
+        }
+        .container > div {
+            margin: 10px;
+        }
+        .header {
+            height: 75vh;
+        }
+  }
+  /* Large Screens */
+  @media (min-width: 1101px) {
+    .container {
+            display: grid;
+            height: 100%;
+            margin-left: 100px;
+            margin-right: 100px;
+            grid-template-columns: 40px repeat (7, 1fr);
+            grid-template-rows: auto auto 1fr;
+            grid-template-areas: 
+            "hd hd hd hd hd hd hd hd"
+            "sd sd sd sd main main main main"
+            "ft ft ft ft ft ft ft ft";
+        }
+        .container > div {
+            margin: 10px;
+        }
+        .header {
+            height: 75vh;
+        }
+  }
+
+
+
+
+
+    
+
+

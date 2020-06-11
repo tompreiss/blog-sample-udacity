@@ -1,0 +1,238 @@
+body, html {
+    background-color: #ffffff;
+    color: black;
+    font-size: 18px;
+}
+.container {
+    display: grid;
+    height: 100%;
+    grid-template-columns: 40px repeat (7, 1fr);
+    grid-template-rows: auto auto auto 1fr;
+    grid-template-areas: 
+    "hd hd hd hd hd hd hd hd"
+    "main main main main main main feat feat"
+    "main main main main main main feat feat"
+    "ft ft ft ft ft ft ft ft";
+}
+.header {
+        grid-area: hd;
+        background-image: url(../media/creativity2.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 75vh;
+        border-radius: 10px;
+        color: #fff06c;
+    }
+.container > div:first-child {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: flex-end;
+    text-decoration: underline;
+    font-size: 1.7em;
+}
+.content {
+    grid-area: main;
+    margin-right: 20px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+}
+.content > article {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.content > article h5 {
+    font-style: italic;
+    font-weight: normal;
+    color: #919191;
+}
+.button { 
+    background-color: transparent;
+    border: none;
+    color: black;
+    margin-top: 24px;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 0.7em;
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+.button:hover {
+    background-color: black;
+    color: white;
+    opacity: 0.85;
+    border: 1px solid black;
+}
+.nav-button {
+    background-color: transparent;
+    border: none;
+    color: black;
+    margin-top: 24px;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 0.5em;
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+.nav-button:hover {
+    background-color: black;
+    color: white;
+    opacity: 0.85;
+    border: 1px solid black;
+}
+.header {
+    grid-area: hd;
+}
+.feature {
+    margin: 50px 0 0 1px;
+    grid-area: feat;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+}
+.feature > div:first-child {
+    background-color: #f1f1f1;
+    width: 200px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+}
+.about {
+    margin-right: 10px;
+    padding-top: 0;
+    padding-bottom: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.about > h2 {
+    margin-top: 8px;
+    margin-left: 10px;
+    margin-bottom: 0;
+    font-style: italic;
+}
+.about > p {
+    margin-left: 10px;
+    font-size: 0.8em;
+}
+.archives {
+    display: flex;
+    flex-direction: column;
+    justify-self: flex-start;
+    padding: 15px;
+    padding-top: 0;
+}
+.archives > h3 {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 0;
+    font-style: italic;
+}
+.archives > ul {
+    margin: 9px;
+    padding: 0;
+}
+.archives > ul li {
+    list-style-type: none;
+    font-size: 0.8em;
+}
+.soc-media > ul {
+    margin: 9px;
+    padding: 0;
+}
+.soc-media > h3 {
+    margin-left: 24px;
+    margin-right: 10px;
+    margin-bottom: 0;
+    font-style: italic;
+}
+.soc-media ul li {
+    margin-left: 14px;
+    list-style-type: none;
+    font-size: 0.8em;
+}
+.footer{
+    grid-area: ft;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f1f1f1;
+    height: 60px;
+    margin-top: 30px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    font-size: 0.8em;
+}
+
+/* Breakpoints */
+/* Anything smaller than first breakpoint 600px */
+    @media (max-width: 600px) {
+        .container {
+            display: grid;
+            padding: 0;
+            grid-template-columns: auto auto;
+            grid-template-rows: auto auto 1fr;
+            grid-template-areas: 
+            "hd hd"
+            "main main sd"
+            "ft ft"; 
+        }
+        .container > div {    
+            margin: 10px;
+        }
+        .container > .header {
+            height: 50vh;
+        }
+        .content > div {
+            margin-right: 300px;
+        }
+    }
+    /* Media screens */
+    @media (min-width: 600px) and (max-width:1030px) {
+        .container {
+                display: grid;
+                height: 100%;
+                grid-template-columns: auto auto;
+                grid-template-rows: auto auto 1fr;
+                grid-template-areas: 
+                "hd hd hd hd"
+                "main main main sd"
+                "ft ft ft"
+            }
+            .container > div {
+                margin: 10px;
+            }
+            .header {
+                height: 75vh;
+            }
+    } 
+    /* Large screens */
+    @media (min-width: 1101px) {
+        .container {
+                display: grid;
+                height: 100%;
+                margin-left: 80px;
+                margin-right: 80px;
+                grid-template-columns: auto auto;
+                grid-template-rows: auto auto 1fr;
+                grid-template-areas: 
+                "hd hd hd hd hd"
+                "main main main main sd sd"
+                "ft ft ft ft";
+            }
+            .container > div {
+                margin: 10px;
+            }
+            .header {
+                height: 75vh;
+            }
+    } 
+
